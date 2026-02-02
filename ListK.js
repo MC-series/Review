@@ -1,4 +1,4 @@
-const kdramas = [
+window.kdramas = [
   { 
     name: "My Demon", 
     poster: "https://image.tmdb.org/t/p/original/zthWx1TKEXy9MOfedBaJ0ZLr8vn.jpg", 
@@ -638,7 +638,7 @@ const kdramas = [
     studio: "Yong Film",
     rating: "⭐ 5", 
     mood: "Nostalgic",
-    description: "In 1999, a seventeen-year-old girl with a heart of gold starts keeping close tabs on a popular classmate to help her smitten best friend — only to get swept up in her own bittersweet first love story.",
+    story: "In 1999, a seventeen-year-old girl with a heart of gold starts keeping close tabs on a popular classmate to help her smitten best friend — only to get swept up in her own bittersweet first love story.",
     hook: "A teenage girl monitors her friend's crush, but finds herself falling for his best friend instead.",
     quote: "I'll be your eyes and ears. Tell me everything you want to know about him.",
     watch: "https://www.dailymotion.com/video/x8h2gp7",
