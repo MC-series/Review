@@ -80,7 +80,7 @@ input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select:
 .nav-p-btn { height: 34px; font-size: 11px; }
 .nav-chat-overlay { display: flex !important; justify-content: center !important; align-items: center !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; }
 .nav-chat-card { width: 88%; height: 70vh; max-width: 290px; margin: 0 auto; position: relative; }
-.nav-ds-warn-card, .nav-share-card, .nav-redir-card { width: 85%; max-width: 340px; margin: 0 auto; padding: 20px; }
+.nav-ds-warn-card, .nav-share-card, .nav-redir-card { width: 88%; max-width: 290px; margin: 0 auto; padding: 20px; }
 .nav-log-card { width: 92%; max-width: 350px; max-height: 85vh; border-radius: 24px; margin: 0 auto; }
 .nav-log-header { padding: 12px 18px; }
 .nav-log-main-title { font-size: 18px; }
