@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Series</title>
+    <link rel="stylesheet" href="LoadingC.css">
+    <script src="LoadingJ.js" defer></script>
+    <script src="ListA.js"></script>
+    <script src="ListK.js"></script>
+    <link rel="stylesheet" href="HomeC.css">
+    <script src="HomeJ.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="NavC.css">
+    <link rel="stylesheet" href="SeriesDetailsC.css">
+    <script src="NavJ.js" defer></script>
+    
+</head>
+<body>
+
+<div class="load-full-page-context">
+
+        <div class="load-night">
+            <div class="load-shooting-star"></div>
+            <div class="load-shooting-star"></div>
+            <div class="load-shooting-star"></div>
+            <div class="load-shooting-star"></div>
+            <div class="load-shooting-star"></div>
+        </div>
+
+        <div id="load-stars-container"></div>
+
+        <div id="load-wrapper">
+            <div id="load-container">
+                <div id="load-text-group">
+                    <div id="load-status-text">LOADING</div>
+                    <div id="load-percentage">0%</div>
+                </div>
+                <div id="load-spinner-outer"></div>
+            </div>
+        </div>
+
+        <div id="load-car-track">
+            <div id="load-car-mover">
+                <svg viewBox="0 0 178 40">
+                    <path class="load-svg-air" d="M 46 16.5 h -20 a 8 8 0 0 1 0 -16" fill="none" stroke="#E85725" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"></path>
+                    <g id="load-svg-car-body">
+                        <svg viewBox="0 0 118 28.125" x="30" y="11.725" width="118" height="28.125">
+                            <defs>
+                                <circle id="load-svg-circle" cx="0" cy="0" r="1"></circle>
+                                <g id="load-svg-wheel-unit">
+                                    <use href="#load-svg-circle" fill="#1E191A" transform="scale(10)"></use>
+                                    <use href="#load-svg-circle" fill="#fff" transform="scale(5)"></use>
+                                    <path fill="#1E191A" stroke="#1E191A" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.2" d="M -3.5 0 a 4 4 0 0 1 7 0 a 3.5 3.5 0 0 0 -7 0"></path>
+                                    <use href="#load-svg-circle" fill="#1E191A" transform="scale(1.5)"></use>
+                                    <path fill="none" stroke="#F9B35C" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20 14 8 5" d="M 0 -7.5 a 7.5 7.5 0 0 1 0 15 a 7.5 7.5 0 0 1 0 -15"></path>
+                                    <path fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.1" d="M -6.5 -6.25 a 10 10 0 0 1 13 0 a 9 9 0 0 0 -13 0"></path>
+                                </g>
+                            </defs>
+                            <g transform="translate(51.5 11.125)">
+                                <path stroke-width="2" stroke="#1E191A" fill="#EF3F33" d="M 0 0 v -2 a 4.5 4.5 0 0 1 9 0 v 2"></path>
+                                <rect fill="#1E191A" x="3.25" y="-3" width="5" height="3"></rect>
+                            </g>
+                            <g transform="translate(10 24.125)">
+                                <g transform="translate(59 0)">
+                                    <path id="load-svg-shadow" opacity="0.7" fill="#1E191A" d="M -64 0 l -4 4 h 9 l 8 -1.5 h 100 l -3.5 -2.5"></path>
+                                </g>
+                                <path fill="#fff" stroke="#1E191A" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" d="M 0 0 v -10 l 35 -13 v 5 l 4 0.5 l 0.5 4.5 h 35.5 l 30 13"></path>
+                                <g fill="#fff" stroke="#1E191A" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M -6 0 v -22 h 10 z"></path>
+                                    <path d="M 105 0 h -3 l -12 -5.2 v 6.2 h 12"></path>
+                                </g>
+                                <g fill="#949699" opacity="0.7">
+                                    <rect x="16" y="-6" width="55" height="6"></rect>
+                                    <path d="M 24 -14 l 13 -1.85 v 1.85"></path>
+                                </g>
+                                <g fill="none" stroke="#1E191A" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke-dasharray="30 7 42" d="M 90 0 h -78"></path>
+                                    <path d="M 39.5 -13 h -15"></path>
+                                </g>
+                                <path fill="#fff" stroke="#1E191A" stroke-width="2.25" stroke-linejoin="round" d="M 48.125 -6 h -29 v 6 h 29"></path>
+                                <rect x="48" y="-7.125" width="6.125" height="7.125" fill="#1E191A"></rect>
+                                <g fill="#1E191A">
+                                    <rect x="60" y="-15" width="1" height="6"></rect>
+                                    <rect x="56.5" y="-17.5" width="6" height="2.5"></rect>
+                                </g>
+                            </g>
+                            <g class="load-svg-wheels" transform="translate(0 18.125)">
+                                <g transform="translate(10 0)"><use href="#load-svg-wheel-unit"></use></g>
+                                <g transform="translate(87 0)"><use href="#load-svg-wheel-unit"></use></g>
+                            </g>
+                        </svg>
+                    </g>
+                    <g fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round">
+                        <path class="load-svg-air" stroke="#E85725" d="M 177.5 34 h -10 q -16 0 -32 -8"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 167 28.5 c -18 -2 -22 -8 -37 -10.75"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 153 20 q -4 -1.7 -8 -3"></path>
+                        <path class="load-svg-air" stroke="#E85725" d="M 117 16.85 c -12 0 -12 16 -24 16 h -8"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 65 12 q -5 3 -12 3.8"></path>
+                        <path class="load-svg-air" stroke="#949699" stroke-dasharray="9 10" d="M 30 13.5 h -2.5 q -5 0 -5 -5"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 31 33 h -10"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 29.5 23 h -12"></path>
+                        <path class="load-svg-air" stroke="#949699" d="M 13.5 23 h -6"></path>
+                        <path class="load-svg-air" stroke="#E85725" d="M 28 28 h -27.5"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <div id="load-footer">Toutis Series | © 2026 Toutis Series. All rights reserved.</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <header class="home-branding-header">
+        <h1 class="home-title-main">C-Series</h1>
+        <div class="home-top-stats-bar">
+            <div class="home-mini-stat">
+                <span class="home-stat-num" id="home-s-a">0</span>
+                <span class="home-stat-label">Anime</span>
+            </div>
+            <div class="home-mini-stat">
+                <span class="home-stat-num" id="home-s-total">0</span>
+                <span class="home-stat-label">Total</span>
+            </div>
+            <div class="home-mini-stat">
+                <span class="home-stat-num" id="home-s-k">0</span>
+                <span class="home-stat-label">K-Drama</span>
+            </div>
+        </div>
+    </header>
+
+
+
+        <div class="home-main-portal">
+            <div class="home-side-anime">
+            <div id="home-abg-1" class="home-bg-overlay-anime" style="opacity: 1;"></div>
+            <div id="home-abg-2" class="home-bg-overlay-anime" style="opacity: 0;"></div>
+            <div class="home-anime-card">
+                <div class="home-anime-poster-frame">
+                    <img id="home-aposter" src="" class="home-anime-poster-img" alt="Anime Poster">
+                </div>
+                <div class="home-text-content">
+                    <span class="home-anime-label">Featured Anime</span>
+                    <h2 class="home-anime-title" id="home-atitle">Anime</h2>
+                    <p class="home-anime-hook" id="home-ahook"></p>
+                    <button class="home-anime-btn" onclick="openSection('section-anime')">Explore</button>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="home-side-drama">
+            <div id="home-kbg-1" class="home-bg-overlay-drama" style="opacity: 1;"></div>
+            <div id="home-kbg-2" class="home-bg-overlay-drama" style="opacity: 0;"></div>
+            <div class="home-drama-card">
+                <div class="home-drama-poster-frame">
+                    <img id="home-kposter" src="" class="home-drama-poster-img" alt="Drama Poster">
+                </div>
+                <div class="home-text-content">
+                    <span class="home-drama-label">Popular Dramas</span>
+                    <h2 class="home-drama-title" id="home-ktitle">K-Drama</h2>
+                    <p class="home-drama-hook" id="home-khook"></p>
+                <button class="home-drama-btn" onclick="openSection('section-kdrama')">Explore</button>                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="nav-prompt-overlay" id="nav-music-prompt">
+        <div class="nav-prompt-card">
+            <div class="nav-prompt-main">
+                <div class="nav-prompt-icon"><i class="fas fa-headphones"></i></div>
+                <div class="nav-prompt-text">
+                    <span class="nav-prompt-t">Background Music</span>
+                    <span class="nav-prompt-s">Enable audio experience?</span>
+                </div>
+                <div class="nav-prompt-info" onclick="navOpenMusicFromPrompt()"><i class="fas fa-info-circle"></i></div>
+            </div>
+            <div class="nav-prompt-btns">
+                <button class="nav-p-btn nav-p-yes" onclick="navClosePrompt(true)">Play Now</button>
+                <button class="nav-p-btn nav-p-no" onclick="navClosePrompt(false)">Later</button>
+            </div>
+            <div class="nav-p-progress-bg"><div class="nav-p-progress-bar" id="nav-prompt-progress"></div></div>
+        </div>
+    </div>
+    <div class="nav-np-wrap" id="nav-nowplaying-alert">
+        <div class="nav-np-card">
+            <div class="nav-np-main">
+                <div class="nav-np-icon"><i class="fas fa-compact-disc fa-spin"></i></div>
+                <div class="nav-np-text">
+                    <span class="nav-np-t" id="nav-np-title">Now Playing</span>
+                    <span class="nav-np-s">Now Playing</span>
+                </div>
+            </div>
+            <div class="nav-np-progress"><div class="nav-np-bar" id="nav-np-bar"></div></div>
+        </div>
+    </div>
+
+    <div class="nav-home-warn-overlay" id="nav-home-modal">
+        <div class="nav-home-warn-card">
+            <h3 class="nav-home-warn-title">Return Home?</h3>
+            <p class="nav-home-warn-text">Would you like to scroll back to the top of the page?</p>
+            <div class="nav-home-warn-actions">
+                <button class="nav-home-warn-btn nav-home-cancel" onclick="navCloseHomeWarn()">Stay Here</button>
+                <button class="nav-home-warn-btn nav-home-confirm" onclick="navConfirmScrollTop()">Yes, Scroll Up</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="nav-log-overlay" id="nav-log-modal">
+        <div class="nav-log-card">
+            <div class="nav-log-header">
+                <h2 class="nav-log-main-title">🚀 V5.0 Revamp</h2>
+                <button class="nav-log-close" onclick="navCloseLog()">&times;</button>
+            </div>
+            
+            <div class="nav-log-body">
+                <div class="nav-log-banner">
+                    <span class="nav-log-tag">February 1st, 2026</span>
+                    <h3>🎉 IT’S FINALLY HERE </h3>
+                    <h3>🚀 The biggest revamp so far!</h3>
+                </div>
+
+                <section class="nav-log-section">
+                    <h4><i class="fas fa-layer-group"></i> No More Review Pages</h4>
+                    <p>Click any poster to see rating, studio, seasons, storyline, Spotify, and trailers in one place.</p>
+                </section>
+
+                <section class="nav-log-section">
+                    <h4><i class="fas fa-compass"></i> New Nav Bar</h4>
+                    <div class="nav-log-grid">
+                        <span>🏠 Home</span>
+                        <span>📑 Changelog</span>
+                        <span>💬 Discord</span>
+                        <span>🔍 Search</span>
+                        <span>🎵 Music</span>
+                        <span>🤖 Chatbot</span>
+                    </div>
+                </section>
+
+                <section class="nav-log-section">
+                    <h4><i class="fas fa-gamepad"></i> New Buttons</h4>
+                    <div class="nav-log-grid">
+                        <span>🎲 Dice</span>
+                        <span>📈 Trending</span>
+                        <span>🏆 Ranking</span>
+                        <span>⚔️ Versus</span>
+                        <span>✍️ Plot Search</span>
+                        <span>💡 Innovation</span>
+                    </div>
+                </section>
+
+                <section class="nav-log-section">
+                    <h4>⭐ QoL</h4>
+                    <ul class="nav-log-list">
+                        <li>Cool TV section with <strong>Amazing</strong> posters</li>
+                        <li>Video Including all your Favorite Characters</li>
+                        <li>More Smooth and Clean experience</li>
+                        <li>Music fitting the vibe to relax and enjoy the site</li>
+                        <li>A lovely new loading screen</li>
+                    </ul>
+                </section>
+
+                <section class="nav-log-section">
+                    <h4><i class="fas fa-layer-group"></i> And many more! More details on Discord!</h4>
+                    <p>Make sure to check them out while scrolling and discovering this update!.</p>
+                </section>
+            </div>
+
+            <div class="nav-log-footer">
+                <button class="nav-log-btn" onclick="navCloseLog()">Let's Explore</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="nav-ds-warn-overlay" id="nav-discord-modal">
+        <div class="nav-ds-warn-card">
+            <h3 class="nav-ds-warn-title">External Link</h3>
+            <p class="nav-ds-warn-text">You are about to leave this page and open Discord.</p>
+            <div class="nav-ds-warn-actions">
+                <button class="nav-ds-warn-btn nav-ds-cancel" onclick="navCloseDiscordWarn()">Stay Here</button>
+                <a href="https://discord.gg/T7bJZFKRmS" target="_blank" class="nav-ds-warn-btn nav-ds-confirm" onclick="navCloseDiscordWarn()">Continue</a>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="nav-search-choice-overlay" id="nav-search-choice-modal">
+        <div class="nav-search-choice-card">
+            <h3 class="nav-search-choice-title">Choose Category</h3>
+            <div class="nav-search-choice-options">
+                <button class="nav-search-choice-btn" onclick="navSelectCategory('anime')">Anime</button>
+                <button class="nav-search-choice-btn" onclick="navSelectCategory('kdrama')">K-Drama</button>
+            </div>
+            <button class="nav-search-choice-close" onclick="navCloseSearchChoice()">&times;</button>
+        </div>
+    </div>
+
+    <div class="nav-search-overlay" id="nav-search-modal">
+        <div class="nav-search-card">
+            <div class="nav-search-header">
+                <h3 class="nav-search-title">Search Series</h3>
+                <button class="nav-search-close" onclick="navCloseSearch()">&times;</button>
+            </div>
+            <div class="nav-search-body">
+                <input type="text" id="nav-search-input" placeholder="Type to search..." autocomplete="off">
+            </div>
+            <div id="nav-search-results" class="nav-search-results-container"></div>
+        </div>
+    </div>
+
+
+
+<div class="nav-music-overlay" id="nav-music-modal">
+    <div class="nav-music-card">
+        <div class="nav-music-img-bg" id="nav-img-bg"></div>
+        
+        <div class="nav-music-content">
+            <div class="nav-music-header">
+                <button class="nav-close-x" onclick="navCloseMusic()" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="nav-music-body">
+                <div class="nav-art-container">
+                    <img id="nav-main-art" src="" alt="Album Art" class="nav-album-art">
+                </div>
+
+                <div class="nav-track-info">
+                    <h3 id="nav-track-title">Loading...</h3>
+                    <p id="nav-track-artist">Please wait</p>
+                </div>
+
+                <div class="nav-progress-section">
+                    <div class="nav-progress-container" onclick="navSetProgress(event)">
+                        <div class="nav-progress-bar" id="nav-progress-bar"></div>
+                    </div>
+                    <div class="nav-time-labels">
+                        <span id="nav-time-cur">0:00</span>
+                        <span id="nav-time-dur">0:00</span>
+                    </div>
+                </div>
+
+                <div class="nav-player-controls">
+                    <button class="nav-side-ctrl" onclick="navPrev()"><i class="fas fa-step-backward"></i></button>
+                    <button class="nav-play-pause" onclick="navTogglePlay()" id="nav-play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="nav-side-ctrl" onclick="navNext()"><i class="fas fa-step-forward"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="nav-chat-overlay" id="nav-chat-modal">
+        <div class="nav-chat-card">
+            <div class="nav-chat-header">
+                <div class="nav-chat-title-wrap">
+                    <div class="nav-chat-status"></div>
+                    <h3>Assistant</h3>
+                </div>
+                <button class="nav-chat-close" onclick="navCloseChat()">&times;</button>
+            </div>
+            
+            <div class="nav-chat-body" id="nav-chat-display">
+                <div class="nav-msg bot-msg">Hello! Select a question below to get started:</div>
+            </div>
+
+            <div class="nav-chat-footer">
+                <div class="nav-chat-controls">
+                    <span>Quick Questions</span>
+                    <button class="nav-chat-refresh" onclick="renderQuestions()" title="Refresh Questions">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="nav-chat-options" id="nav-chat-options">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="nav-lang-overlay" id="nav-lang-modal">
+        <div class="nav-lang-card">
+            <div class="nav-lang-header-icon"><i class="fas fa-language"></i></div>
+            <h3 class="nav-lang-title">Display Language</h3>
+            <p class="nav-lang-text">Current language:</p>
+            
+        <div class="nav-google-outer">
+            <div id="google_translate_element"></div>
+        </div>
+
+            <div class="nav-lang-actions">
+                <button class="nav-lang-done-btn" onclick="navCloseLang()">Done</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="nav-share-overlay" id="nav-share-modal">
+        <div class="nav-share-card">
+            <h3 class="nav-share-title">Share Link</h3>
+            <p class="nav-share-text">Copy the link below or share it on social media.</p>
+            
+            <div class="nav-share-input-box">
+                <input type="text" class="nav-share-url" value="http://tiny.cc/ToutisSeries" readonly id="nav-share-input">
+                <button class="nav-share-copy-btn" onclick="navCopyLink()">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="nav-social-row">
+                <a href="javascript:void(0)" class="nav-social-btn nav-wa" onclick="navConfirmShare('https://wa.me/?text=http://tiny.cc/ToutisSeries')"><i class="fab fa-whatsapp"></i></a>
+                <a href="javascript:void(0)" class="nav-social-btn nav-ig" onclick="navConfirmShare('https://www.instagram.com/')"><i class="fab fa-instagram"></i></a>
+                <a href="javascript:void(0)" class="nav-social-btn nav-x" onclick="navConfirmShare('https://twitter.com/intent/tweet?url=http://tiny.cc/ToutisSeries')"><i class="fab fa-x-twitter"></i></a>
+                <a href="javascript:void(0)" class="nav-social-btn nav-ds-soc" onclick="navConfirmShare('discord://')"><i class="fab fa-discord"></i></a>
+            </div>
+
+            <div class="nav-share-actions">
+                <button class="nav-share-btn nav-close" onclick="navCloseShare()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-redir-overlay" id="nav-share-redirect-warning">
+        <div class="nav-redir-card">
+            <h3 class="nav-redir-title">Leaving Page</h3>
+            <p class="nav-redir-text">You are being redirected to an external social platform to share this content.</p>
+            <div class="nav-redir-actions">
+                <button class="nav-redir-btn nav-redir-cancel" onclick="navCancelRedirect()">Go Back</button>
+                <a href="#" id="nav-redir-final-link" target="_blank" class="nav-redir-btn nav-redir-confirm" onclick="navHandleDiscordPriority(this)">I Understand</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="nav-fab" id="nav-fab-trigger" onclick="navToggle(true)">
+        <svg class="nav-ico" style="stroke-width:3" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+
+
+
+    <div class="nav-dock-container">
+        <nav class="nav-dock-glass" id="nav-main-dock">
+            <ul class="nav-dock-list">
+                <div class="nav-side-group">
+                    <li><a href="#" class="nav-btn nav-home" onclick="navOpenHomeWarn(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </a></li>
+                    <li><a href="javascript:void(0)" class="nav-btn nav-log" onclick="navOpenLog(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </a></li>
+                    <li><a href="javascript:void(0)" class="nav-btn nav-discord" onclick="navOpenDiscordWarn(this)">
+                        <i class="fab fa-discord"></i>
+                    </a></li>
+                    <li><a href="#" class="nav-btn nav-search" onclick="navOpenSearch(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </a></li>
+                </div>
+
+                <li class="nav-center-wrap">
+                    <div class="nav-x-btn" onclick="navToggle(false)">
+                        <svg class="nav-ico" style="width:28px; height:28px;" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </div>
+                </li>
+
+                <div class="nav-side-group">
+                <li><a href="javascript:void(0)" class="nav-btn nav-music" onclick="navOpenMusic(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                    </a></li>
+                    <li><a href="javascript:void(0)" class="nav-btn nav-chat" onclick="navOpenChat(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a></li>
+                    <li><a href="javascript:void(0)" class="nav-btn nav-lang" onclick="navOpenLang(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </a></li>
+                    <li><a href="javascript:void(0)" class="nav-btn nav-share" onclick="navOpenShare(this)">
+                        <svg class="nav-ico" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                    </a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en" async></script>
+
+
+
+
+
+
+    <!-- SERIES DETAILS MODAL -->
+    <div class="sd-modal-overlay" id="sd-modal-overlay">
+        <div class="sd-modal-card">
+            <!-- Main Layout: Poster Left, Content Right -->
+            <div class="sd-layout-wrapper">
+                <!-- Poster Image (Left Side) -->
+                <div class="sd-poster-section">
+                    <img id="sd-poster-img" src="" alt="Series Poster" class="sd-poster">
+                </div>
+
+                <!-- Series Details Content (Right Side) -->
+                <div class="sd-content-section">
+                    <!-- Title -->
+                    <h2 id="sd-title" class="sd-title">Series Title</h2>
+                    
+                    <!-- Hook -->
+                    <p id="sd-hook" class="sd-hook">No hook available.</p>
+
+                <!-- Quick Info Grid - First Row: Rating, Seasons, Episodes -->
+                <div class="sd-info-grid-row">
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Rating</span>
+                        <span id="sd-rating" class="sd-info-value">-</span>
+                    </div>
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Seasons</span>
+                        <span id="sd-seasons" class="sd-info-value">-</span>
+                    </div>
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Episodes</span>
+                        <span id="sd-episodes" class="sd-info-value">-</span>
+                    </div>
+                </div>
+
+                <!-- Quick Info Grid - Second Row: Mood, Studio, Genre -->
+                <div class="sd-info-grid-row">
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Mood</span>
+                        <span id="sd-mood" class="sd-info-value">-</span>
+                    </div>
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Studio</span>
+                        <span id="sd-studio" class="sd-info-value">-</span>
+                    </div>
+                    <div class="sd-info-item">
+                        <span class="sd-info-label">Genre</span>
+                        <span id="sd-genre" class="sd-info-value">-</span>
+                    </div>
+                </div>
+
+                <!-- Storyline -->
+                <div class="sd-section">
+                    <h4 class="sd-section-title">Storyline</h4>
+                    <p id="sd-storyline" class="sd-storyline-text">No description available.</p>
+                </div>
+
+                <!-- Trailer Embed -->
+                <div class="sd-section" id="sd-trailer-container" style="display:none;">
+                    <h4 class="sd-section-title-ok">Trailer</h4>
+                    <iframe id="sd-trailer-embed" class="sd-embed-player-yt" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Spotify Embed -->
+                <div class="sd-section" id="sd-spotify-container" style="display:none;">
+                    <h4 class="sd-section-title-ok">Spotify</h4>                    
+                    <iframe id="sd-spotify-embed" class="sd-embed-player-sp" src="" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                </div>
+
+                <!-- Actions Row -->
+                <div class="sd-actions-row">
+                    <a id="sd-watch-link" href="javascript:void(0)" class="sd-action-btn sd-watch" onclick="event.preventDefault()">
+                        <i class="fas fa-play"></i> Watch
+                    </a>
+                    <a id="sd-laugh-link" href="javascript:void(0)" class="sd-action-btn sd-laugh" onclick="event.preventDefault()">
+                        <i class="fas fa-laugh"></i> Laugh
+                    </a>
+                    <a id="sd-return-link" href="javascript:void(0)" class="sd-action-btn sd-return" onclick="sdReturnToSearch(event)">
+                        <i class="fas fa-arrow-left"></i> Return
+                    </a>
+                    <button class="sd-action-btn sd-close" onclick="sdCloseModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
