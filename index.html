@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C-Series</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link rel="stylesheet" href="LoadingC.css">
     <script src="LoadingJ.js" defer></script>
-    <script src="ListA.js"></script>
-    <script src="ListK.js"></script>
+
     <link rel="stylesheet" href="HomeC.css">
     <script src="HomeJ.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link rel="stylesheet" href="NavC.css">
     <script src="NavJ.js" defer></script>
+
+    <script src="ListA.js"></script>
+    <script src="ListK.js"></script>
     
 </head>
 <body>
 
-<div class="load-full-page-context">
+    <!-- LoadingPage -->
+    <div class="load-full-page-context">
 
         <div class="load-night">
             <div class="load-shooting-star"></div>
@@ -118,24 +123,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- HomePage -->
     <header class="home-branding-header">
         <h1 class="home-title-main">C-Series</h1>
         <div class="home-top-stats-bar">
@@ -154,60 +142,39 @@
         </div>
     </header>
 
+    <div class="home-main-portal">
 
-
-        <div class="home-main-portal">
-            <div class="home-side-anime">
-            <div id="home-abg-1" class="home-bg-overlay-anime" style="opacity: 1;"></div>
-            <div id="home-abg-2" class="home-bg-overlay-anime" style="opacity: 0;"></div>
-            <div class="home-anime-card">
-                <div class="home-anime-poster-frame">
-                    <img id="home-aposter" src="" class="home-anime-poster-img" alt="Anime Poster">
-                </div>
-                <div class="home-text-content">
-                    <span class="home-anime-label">Featured Anime</span>
-                    <h2 class="home-anime-title" id="home-atitle">Anime</h2>
-                    <p class="home-anime-hook" id="home-ahook"></p>
-                    <button class="home-anime-btn" onclick="openSection('section-anime')">Explore</button>
-                </div>
+    <div class="home-side-anime">
+        <div id="home-abg-1" class="home-bg-overlay-anime" style="opacity: 1;"></div>
+        <div id="home-abg-2" class="home-bg-overlay-anime" style="opacity: 0;"></div>
+        <div class="home-anime-card">
+            <div class="home-anime-poster-frame">
+                <img id="home-aposter" src="" class="home-anime-poster-img" alt="Anime Poster">
             </div>
-        </div>
-
-
-        
-        <div class="home-side-drama">
-            <div id="home-kbg-1" class="home-bg-overlay-drama" style="opacity: 1;"></div>
-            <div id="home-kbg-2" class="home-bg-overlay-drama" style="opacity: 0;"></div>
-            <div class="home-drama-card">
-                <div class="home-drama-poster-frame">
-                    <img id="home-kposter" src="" class="home-drama-poster-img" alt="Drama Poster">
-                </div>
-                <div class="home-text-content">
-                    <span class="home-drama-label">Popular Dramas</span>
-                    <h2 class="home-drama-title" id="home-ktitle">K-Drama</h2>
-                    <p class="home-drama-hook" id="home-khook"></p>
-                <button class="home-drama-btn" onclick="openSection('section-kdrama')">Explore</button>                </div>
+            <div class="home-text-content">
+                <span class="home-anime-label">Featured Anime</span>
+                <h2 class="home-anime-title" id="home-atitle">Anime</h2>
+                <p class="home-anime-hook" id="home-ahook"></p>
+                <button class="home-anime-btn" onclick="openSection('section-anime')">Explore</button>
             </div>
         </div>
     </div>
+    <div class="home-side-drama">
+        <div id="home-kbg-1" class="home-bg-overlay-drama" style="opacity: 1;"></div>
+        <div id="home-kbg-2" class="home-bg-overlay-drama" style="opacity: 0;"></div>
+        <div class="home-drama-card">
+            <div class="home-drama-poster-frame">
+                <img id="home-kposter" src="" class="home-drama-poster-img" alt="Drama Poster">
+            </div>
+            <div class="home-text-content">
+                <span class="home-drama-label">Popular Dramas</span>
+                <h2 class="home-drama-title" id="home-ktitle">K-Drama</h2>
+                <p class="home-drama-hook" id="home-khook"></p>
+            <button class="home-drama-btn" onclick="openSection('section-kdrama')">Explore</button>                </div>
+        </div>
+    </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
@@ -218,12 +185,8 @@
 
 
 
-
-
-
-
-
-<div class="nav-prompt-overlay" id="nav-music-prompt">
+    <!-- Notification  Music PopUp -->
+    <div class="nav-prompt-overlay" id="nav-music-prompt">
         <div class="nav-prompt-card">
             <div class="nav-prompt-main">
                 <div class="nav-prompt-icon"><i class="fas fa-headphones"></i></div>
@@ -253,6 +216,8 @@
         </div>
     </div>
 
+
+    <!-- Home Icon -->
     <div class="nav-home-warn-overlay" id="nav-home-modal">
         <div class="nav-home-warn-card">
             <h3 class="nav-home-warn-title">Return Home?</h3>
@@ -265,7 +230,7 @@
     </div>
 
 
-
+    <!-- ChangeLog Icon -->
     <div class="nav-log-overlay" id="nav-log-modal">
         <div class="nav-log-card">
             <div class="nav-log-header">
@@ -333,7 +298,7 @@
     </div>
 
 
-
+    <!-- Discord Icon -->
     <div class="nav-ds-warn-overlay" id="nav-discord-modal">
         <div class="nav-ds-warn-card">
             <h3 class="nav-ds-warn-title">External Link</h3>
@@ -346,8 +311,8 @@
     </div>
 
 
-
-        <div class="nav-search-choice-overlay" id="nav-search-choice-modal">
+    <!-- Search Icon -->
+    <div class="nav-search-choice-overlay" id="nav-search-choice-modal">
         <div class="nav-search-choice-card">
             <h3 class="nav-search-choice-title">Choose Category</h3>
             <div class="nav-search-choice-options">
@@ -372,52 +337,52 @@
     </div>
 
 
-
-<div class="nav-music-overlay" id="nav-music-modal">
-    <div class="nav-music-card">
-        <div class="nav-music-img-bg" id="nav-img-bg"></div>
-        
-        <div class="nav-music-content">
-            <div class="nav-music-header">
-                <button class="nav-close-x" onclick="navCloseMusic()" aria-label="Close">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+    <!-- Music Icon -->
+    <div class="nav-music-overlay" id="nav-music-modal">
+        <div class="nav-music-card">
+            <div class="nav-music-img-bg" id="nav-img-bg"></div>
             
-            <div class="nav-music-body">
-                <div class="nav-art-container">
-                    <img id="nav-main-art" src="" alt="Album Art" class="nav-album-art">
-                </div>
-
-                <div class="nav-track-info">
-                    <h3 id="nav-track-title">Loading...</h3>
-                    <p id="nav-track-artist">Please wait</p>
-                </div>
-
-                <div class="nav-progress-section">
-                    <div class="nav-progress-container" onclick="navSetProgress(event)">
-                        <div class="nav-progress-bar" id="nav-progress-bar"></div>
-                    </div>
-                    <div class="nav-time-labels">
-                        <span id="nav-time-cur">0:00</span>
-                        <span id="nav-time-dur">0:00</span>
-                    </div>
-                </div>
-
-                <div class="nav-player-controls">
-                    <button class="nav-side-ctrl" onclick="navPrev()"><i class="fas fa-step-backward"></i></button>
-                    <button class="nav-play-pause" onclick="navTogglePlay()" id="nav-play-btn">
-                        <i class="fas fa-play"></i>
+            <div class="nav-music-content">
+                <div class="nav-music-header">
+                    <button class="nav-close-x" onclick="navCloseMusic()" aria-label="Close">
+                        <i class="fas fa-times"></i>
                     </button>
-                    <button class="nav-side-ctrl" onclick="navNext()"><i class="fas fa-step-forward"></i></button>
+                </div>
+                
+                <div class="nav-music-body">
+                    <div class="nav-art-container">
+                        <img id="nav-main-art" src="" alt="Album Art" class="nav-album-art">
+                    </div>
+
+                    <div class="nav-track-info">
+                        <h3 id="nav-track-title">Loading...</h3>
+                        <p id="nav-track-artist">Please wait</p>
+                    </div>
+
+                    <div class="nav-progress-section">
+                        <div class="nav-progress-container" onclick="navSetProgress(event)">
+                            <div class="nav-progress-bar" id="nav-progress-bar"></div>
+                        </div>
+                        <div class="nav-time-labels">
+                            <span id="nav-time-cur">0:00</span>
+                            <span id="nav-time-dur">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="nav-player-controls">
+                        <button class="nav-side-ctrl" onclick="navPrev()"><i class="fas fa-step-backward"></i></button>
+                        <button class="nav-play-pause" onclick="navTogglePlay()" id="nav-play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="nav-side-ctrl" onclick="navNext()"><i class="fas fa-step-forward"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-
+    <!-- Chatbot Icon -->
     <div class="nav-chat-overlay" id="nav-chat-modal">
         <div class="nav-chat-card">
             <div class="nav-chat-header">
@@ -446,7 +411,7 @@
     </div>
 
 
-
+    <!-- Language Icon -->
     <div class="nav-lang-overlay" id="nav-lang-modal">
         <div class="nav-lang-card">
             <div class="nav-lang-header-icon"><i class="fas fa-language"></i></div>
@@ -464,8 +429,7 @@
     </div>
 
 
-
-
+    <!-- Share Icon -->
     <div class="nav-share-overlay" id="nav-share-modal">
         <div class="nav-share-card">
             <h3 class="nav-share-title">Share Link</h3>
@@ -503,13 +467,13 @@
     </div>
 
 
-
+    <!-- Navigation Bar Button -->
     <div class="nav-fab" id="nav-fab-trigger" onclick="navToggle(true)">
         <svg class="nav-ico" style="stroke-width:3" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
     </div>
 
 
-
+    <!-- Navigation Bar Icon -->
     <div class="nav-dock-container">
         <nav class="nav-dock-glass" id="nav-main-dock">
             <ul class="nav-dock-list">
@@ -556,28 +520,18 @@
 
 
 
-
-
-
     <!-- SERIES DETAILS MODAL -->
     <div class="sd-modal-overlay" id="sd-modal-overlay">
         <div class="sd-modal-card">
-            <!-- Main Layout: Poster Left, Content Right -->
             <div class="sd-layout-wrapper">
-                <!-- Poster Image (Left Side) -->
                 <div class="sd-poster-section">
                     <img id="sd-poster-img" src="" alt="Series Poster" class="sd-poster">
                 </div>
 
-                <!-- Series Details Content (Right Side) -->
                 <div class="sd-content-section">
-                    <!-- Title -->
                     <h2 id="sd-title" class="sd-title">Series Title</h2>
-                    
-                    <!-- Hook -->
                     <p id="sd-hook" class="sd-hook">No hook available.</p>
 
-                <!-- Quick Info Grid - First Row: Rating, Seasons, Episodes -->
                 <div class="sd-info-grid-row">
                     <div class="sd-info-item">
                         <span class="sd-info-label">Rating</span>
@@ -593,8 +547,7 @@
                     </div>
                 </div>
 
-                <!-- Quick Info Grid - Second Row: Mood, Studio, Genre -->
-                <div class="sd-info-grid-row">
+                <div class="sd-info-grid-rows">
                     <div class="sd-info-item">
                         <span class="sd-info-label">Mood</span>
                         <span id="sd-mood" class="sd-info-value">-</span>
@@ -609,25 +562,21 @@
                     </div>
                 </div>
 
-                <!-- Storyline -->
                 <div class="sd-section">
                     <h4 class="sd-section-title">Storyline</h4>
                     <p id="sd-storyline" class="sd-storyline-text">No description available.</p>
                 </div>
 
-                <!-- Trailer Embed -->
                 <div class="sd-section" id="sd-trailer-container" style="display:none;">
                     <h4 class="sd-section-title-ok">Trailer</h4>
                     <iframe id="sd-trailer-embed" class="sd-embed-player-yt" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <!-- Spotify Embed -->
                 <div class="sd-section" id="sd-spotify-container" style="display:none;">
                     <h4 class="sd-section-title-ok">Spotify</h4>                    
                     <iframe id="sd-spotify-embed" class="sd-embed-player-sp" src="" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                 </div>
 
-                <!-- Actions Row -->
                 <div class="sd-actions-row">
                     <a id="sd-watch-link" href="javascript:void(0)" class="sd-action-btn sd-watch" onclick="event.preventDefault()">
                         <i class="fas fa-play"></i> Watch
@@ -642,6 +591,17 @@
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-dcd-overlay" id="nav-details-modal">
+        <div class="nav-dcd-card">
+            <h3 class="nav-dcd-title">External Link</h3>
+            <p class="nav-dcd-text">You are about to leave this page and open an external link.</p>
+            <div class="nav-dcd-actions">
+                <button class="nav-dcd-btn nav-dcd-cancel" onclick="sdCloseExternalLinkWarning()">Stay Here</button>
+                <a href="" target="_blank" class="nav-dcd-btn nav-dcd-confirm" onclick="sdCloseExternalLinkWarning()">Continue</a>
             </div>
         </div>
     </div>
