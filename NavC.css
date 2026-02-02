@@ -79,7 +79,7 @@ input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select:
 .nav-prompt-t { font-size: 12px; }
 .nav-p-btn { height: 34px; font-size: 11px; }
 .nav-chat-overlay { display: flex !important; justify-content: center !important; align-items: center !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; }
-.nav-chat-card { width: 88%; height: 70vh; max-width: 390px; margin: 0 auto; position: relative; }
+.nav-chat-card { width: 88%; height: 70vh; max-width: 290px; margin: 0 auto; position: relative; }
 .nav-ds-warn-card, .nav-share-card, .nav-redir-card { width: 85%; max-width: 340px; margin: 0 auto; padding: 20px; }
 .nav-log-card { width: 92%; max-width: 350px; max-height: 85vh; border-radius: 24px; margin: 0 auto; }
 .nav-log-header { padding: 12px 18px; }
@@ -88,12 +88,11 @@ input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select:
 .nav-log-section h4 { font-size: 14px; }
 .nav-log-banner h3 { font-size: 16px; }
 .nav-home-warn-card { width: 88%; max-width: 290px; padding: 20px; margin: 0 auto; }
-.nav-search-choice-card, .nav-search-card { width: 88%; max-width: 290px; padding: 18px; border-radius: 20px; overflow: hidden; margin: 0 auto; }
+.nav-search-choice-card { width: 88%; max-width: 290px; padding: 18px; border-radius: 20px; overflow: hidden; margin: 0 auto; }
 .nav-lang-card { width: 88%; max-width: 290px; margin: 0 auto; padding: 20px; }
 body:has(.nav-search-show), body:has(.nav-search-choice-show) { overflow: hidden; touch-action: none; }
-.nav-ds-warn-card { width: 88%; max-width: 290px; }
-.nav-share-card { width: 88%; max-width: 290px; }
-.nav-redir-card { width: 88%; max-width: 290px; }
+.nav-search-overlay { position: fixed !important; top: 0; left: 0; width: 100vw; height: 100vh; display: flex !important; align-items: center !important; justify-content: center !important; background: rgba(0, 0, 0, 0.7); z-index: 20000; }
+.nav-search-card { width: 92% !important; max-width: 380px !important; min-width: 300px !important; height: auto !important; max-height: 85vh !important; position: relative !important; margin: 0 auto !important; padding: 20px !important; border-radius: 24px !important; box-sizing: border-box !important; display: flex !important; flex-direction: column !important; }
 }
 
 /* ==========================================
