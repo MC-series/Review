@@ -218,7 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
         setTimeout(showMusicPrompt, 400);
     } else {
         window.addEventListener('loadingComplete', () => {
-            setTimeout(showMusicPrompt, 5400);
+            setTimeout(showMusicPrompt, 1000);
         });
     }
 });
