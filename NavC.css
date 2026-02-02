@@ -10,7 +10,7 @@ input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select:
 /* ==========================================
    FAB TRIGGER
    ========================================== */
-.nav-fab { color: #fff; position: fixed; bottom: 10px; left: 10px; width: 58px; height: 58px; z-index: 10001; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 18px; transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6); background: #000000; border: 2px solid rgba(255, 255, 255, 0.9); box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.1); } /* remove opacity and pointer to fix, opacity: 0; pointer-events: none;*/
+.nav-fab { color: #fff; position: fixed; bottom: 10px; left: 10px; width: 58px; height: 58px; z-index: 10001; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 18px; transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6); background: #000000; border: 2px solid rgba(255, 255, 255, 0.9); box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), inset 0 0 10px rgba(255, 255, 255, 0.1);} /* remove opacity and pointer to fix, opacity: 0; pointer-events: none;*/
 .nav-fab.show-nav { opacity: 1; pointer-events: auto; }
 /* .nav-fab:hover i, .nav-fab:hover svg { filter: invert(1); } */
 .nav-fab.nav-is-hidden { transform: scale(0) rotate(-90deg); opacity: 0; pointer-events: none; }
@@ -66,13 +66,35 @@ input, textarea { -webkit-user-select: text; -ms-user-select: text; user-select:
 /* ==========================================
    RESPONSIVE STYLES
    ========================================== */
-@media screen and (max-width: 775px) { .nav-dock-container { position: fixed; bottom: 10px; left: 50%; } .nav-dock-glass.nav-active { padding: 0 6px; } .nav-side-group { padding: 0 4px; gap: 2px; } .nav-btn { width: 28px; height: 28px; } .nav-center-wrap { width: 44px; } .nav-x-btn { width: 50px; height: 50px; } .nav-fab { width: 52px; height: 52px; bottom: 20px; left: 20px; } }
-@media screen and (max-width: 720px) { .nav-dock-glass { height: 46px; } .nav-side-group { padding: 0 2px; gap: 0px; } .nav-btn { width: 25px; height: 25px; } .nav-ico, .nav-btn i { width: 14px; height: 14px; font-size: 12px; } .nav-center-wrap { width: 38px; } .nav-x-btn { width: 44px; height: 44px; } }
-@media (max-width: 760px) { .nav-prompt-overlay { width: 96%; } .nav-prompt-t { font-size: 12px; } .nav-p-btn { height: 34px; font-size: 11px; } }
-@media screen and (max-width: 725px) { .nav-chat-overlay { display: flex !important; justify-content: center !important; align-items: center !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; } .nav-chat-card { width: 80%; height: 70vh; margin: 0; position: relative; } .nav-fab { width: 30px; height: 30px; bottom: 10px; left: 10px; } .nav-dock-glass.nav-active { max-width: 95vw; height: 50px; border-radius: 25px; } .nav-side-group { padding: 0 6px; gap: 4px; } .nav-btn { width: 32px; height: 32px; margin: 0 1px; } .nav-ico, .nav-btn i { width: 16px; height: 16px; font-size: 14px; } .nav-center-wrap { width: 50px; } .nav-x-btn { width: 54px; height: 54px; } .nav-ds-warn-card, .nav-lang-card, .nav-share-card, .nav-redir-card { width: 85%; padding: 20px; } }
-@media screen and (max-width: 780px) { .nav-log-card { width: 80%; max-height: 85vh; border-radius: 24px; } .nav-log-header { padding: 15px 20px; } .nav-log-main-title { font-size: 18px; } .nav-log-body { padding: 15px 20px; } .nav-log-section h4 { font-size: 14px; } .nav-log-banner h3 { font-size: 16px; } }
-@media screen and (max-width: 725px) { .nav-home-warn-card { width: 80%; padding: 20px; } }
-@media screen and (max-width: 780px) { .nav-search-choice-card, .nav-search-card { width: 80%; padding: 20px; border-radius: 20px; overflow: hidden; } body:has(.nav-search-show), body:has(.nav-search-choice-show) { overflow: hidden; touch-action: none; } }
+@media screen and (max-width: 768px) {
+.nav-dock-container { position: fixed; bottom: 10px; left: 50%; }
+.nav-dock-glass.nav-active { padding: 0 6px; max-width: 95vw; height: 50px; border-radius: 25px; }
+.nav-side-group { padding: 0 6px; gap: 4px; }
+.nav-btn { width: 32px; height: 32px; margin: 0 1px; }
+.nav-ico, .nav-btn i { width: 16px; height: 16px; font-size: 14px; }
+.nav-center-wrap { width: 50px; }
+.nav-x-btn { width: 54px; height: 54px; }
+.nav-fab { width: 30px; height: 30px; bottom: 10px; left: 10px; }
+.nav-prompt-overlay { width: 94%; left: 3%; }
+.nav-prompt-t { font-size: 12px; }
+.nav-p-btn { height: 34px; font-size: 11px; }
+.nav-chat-overlay { display: flex !important; justify-content: center !important; align-items: center !important; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; }
+.nav-chat-card { width: 88%; height: 70vh; max-width: 390px; margin: 0 auto; position: relative; }
+.nav-ds-warn-card, .nav-share-card, .nav-redir-card { width: 85%; max-width: 340px; margin: 0 auto; padding: 20px; }
+.nav-log-card { width: 92%; max-width: 350px; max-height: 85vh; border-radius: 24px; margin: 0 auto; }
+.nav-log-header { padding: 12px 18px; }
+.nav-log-main-title { font-size: 18px; }
+.nav-log-body { padding: 12px 18px; }
+.nav-log-section h4 { font-size: 14px; }
+.nav-log-banner h3 { font-size: 16px; }
+.nav-home-warn-card { width: 88%; max-width: 290px; padding: 20px; margin: 0 auto; }
+.nav-search-choice-card, .nav-search-card { width: 88%; max-width: 290px; padding: 18px; border-radius: 20px; overflow: hidden; margin: 0 auto; }
+.nav-lang-card { width: 88%; max-width: 290px; margin: 0 auto; padding: 20px; }
+body:has(.nav-search-show), body:has(.nav-search-choice-show) { overflow: hidden; touch-action: none; }
+.nav-ds-warn-card { width: 88%; max-width: 290px; }
+.nav-share-card { width: 88%; max-width: 290px; }
+.nav-redir-card { width: 88%; max-width: 290px; }
+}
 
 /* ==========================================
    MODALS: DISCORD
@@ -323,5 +345,4 @@ body { top: 0px !important; }
 .nav-np-s { color: #d9b232; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
 .nav-np-progress { height: 2px; background: rgba(255, 255, 255, 0.1); margin-top: 8px; border-radius: 1px; overflow: hidden; }
 .nav-np-bar { height: 100%; background: #d9b232; width: 0%; }
-
 
