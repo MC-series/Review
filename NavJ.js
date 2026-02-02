@@ -296,17 +296,38 @@ function navSelectCategory(category) {
     if (window.innerWidth > 768) {
         input.focus();
     }
-    document.getElementById('nav-search-results').innerHTML = '';
+    document.getElementById('nav-search-results').innerHTML = '<p style="color:gray; text-align:center; padding:20px;">Loading list...</p>';
 
     const scriptId = 'nav-list-loader';
-    if(document.getElementById(scriptId)) document.getElementById(scriptId).remove();
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = category === 'anime' ? 'ListA.js' : 'ListK.js';
-    script.onload = () => {
-        currentList = category === 'anime' ? window.animes : window.kdramas;
-    };
-    document.head.appendChild(script);
+    const oldScript = document.getElementById(scriptId);
+    
+    if(oldScript) {
+        oldScript.remove();
+    }
+
+    setTimeout(() => {
+        const script = document.createElement('script');
+        script.id = scriptId;
+        script.src = (category === 'anime' ? 'ListA.js' : 'ListK.js') + '?v=' + Date.now();
+        
+        script.onload = () => {
+            const listData = category === 'anime' ? window.animes : window.kdramas;
+            
+            if (listData) {
+                currentList = listData;
+                document.getElementById('nav-search-results').innerHTML = '';
+                console.log("List loaded successfully.");
+            } else {
+                document.getElementById('nav-search-results').innerHTML = '<p style="color:red; text-align:center; padding:20px;">Data Structure Error</p>';
+            }
+        };
+
+        script.onerror = () => {
+            document.getElementById('nav-search-results').innerHTML = '<p style="color:red; text-align:center; padding:20px;">File Not Found</p>';
+        };
+
+        document.head.appendChild(script);
+    }, 10); 
 }
 
 function navCloseSearch() {
