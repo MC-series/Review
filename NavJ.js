@@ -83,7 +83,7 @@ const tracks = [
 ];
 
 function navOpenMusic(btn) {
-    if (typeof navAct === 'function') navAct(btn); 
+    navAct(btn);
     document.getElementById('nav-music-modal').classList.add('nav-show');
     if (!navAudio.src) navLoadTrack(0);
 }
@@ -207,7 +207,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const prompt = document.getElementById('nav-music-prompt');
     const bar = document.getElementById('nav-prompt-progress');
     
-    // Wait for loading screen to complete before showing music prompt
     const showMusicPrompt = () => {
         if (!prompt) return;
         prompt.classList.add('nav-show');
@@ -215,13 +214,11 @@ window.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => { if (prompt.classList.contains('nav-show')) navClosePrompt(false); }, 5100);
     };
     
-    // Check if loading is already complete
     if (window.isLoadingComplete) {
-        setTimeout(showMusicPrompt, 500);
+        setTimeout(showMusicPrompt, 400);
     } else {
-        // Wait for loading to complete
         window.addEventListener('loadingComplete', () => {
-            setTimeout(showMusicPrompt, 500);
+            setTimeout(showMusicPrompt, 5400);
         });
     }
 });
@@ -229,7 +226,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function navClosePrompt(play) {
     const prompt = document.getElementById('nav-music-prompt');
     if (prompt) prompt.classList.remove('nav-show');
-    if (play && typeof navTogglePlay === 'function') {
+    if (play) {
         if (!navAudio.src) navLoadTrack(0);
         navTogglePlay();
     }
@@ -238,7 +235,7 @@ function navClosePrompt(play) {
 function navOpenMusicFromPrompt() {
     navClosePrompt(false);
     const musicBtn = document.querySelector('.nav-music');
-    if (musicBtn && typeof navOpenMusic === 'function') {
+    if (musicBtn) {
         navOpenMusic(musicBtn);
     }
 }
@@ -296,7 +293,6 @@ function navSelectCategory(category) {
     
     const input = document.getElementById('nav-search-input');
     input.value = '';
-    // Only focus on desktop devices to prevent mobile keyboard auto-open
     if (window.innerWidth > 768) {
         input.focus();
     }
@@ -320,10 +316,9 @@ function navCloseSearch() {
 
 document.getElementById('nav-search-input').addEventListener('input', function() {
     const query = this.value.trim().toLowerCase();
-    const resultsDiv = document.getElementById('nav-search-results');
     
     if (!currentList || query.length === 0) {
-        resultsDiv.innerHTML = '';
+        navSearchResults.innerHTML = '';
         return;
     }
 
@@ -333,12 +328,11 @@ document.getElementById('nav-search-input').addEventListener('input', function()
     }
 
     if (results.length === 0) {
-        resultsDiv.innerHTML = '<p style="color:gray; text-align:center; padding:20px;">Not found</p>';
+        navSearchResults.innerHTML = '<p style="color:gray; text-align:center; padding:20px;">Not found</p>';
         return;
     }
 
     results.sort(() => Math.random() - 0.5);
-
     results = results.slice(0, 2);
     
     let html = '';
@@ -363,10 +357,9 @@ document.getElementById('nav-search-input').addEventListener('input', function()
             </div>
         `;
     });
-    resultsDiv.innerHTML = html;
+    navSearchResults.innerHTML = html;
 
-    // Add click handler to search results
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         document.querySelectorAll('.nav-search-item').forEach(element => {
             element.style.cursor = 'pointer';
             element.addEventListener('click', function(e) {
@@ -375,7 +368,6 @@ document.getElementById('nav-search-input').addEventListener('input', function()
                 const seriesData = currentList[seriesIndex];
                 
                 if (seriesData) {
-                    // Map your actual data fields to modal fields
                     const modalData = {
                         name: seriesData.name || '',
                         poster: seriesData.poster || '',
@@ -398,7 +390,7 @@ document.getElementById('nav-search-input').addEventListener('input', function()
                 }
             });
         });
-    }, 0);
+    });
 });
 
 /* ==========================================
@@ -603,6 +595,12 @@ function navAsk(question, btn) {
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+        const warningOverlay = document.getElementById('nav-details-modal');
+        if (warningOverlay && warningOverlay.classList.contains('nav-dcd-show')) {
+            sdCloseExternalLinkWarning();
+            return;
+        }
+        
         navCloseLang();
         navCloseShare();
         navCloseChat();
@@ -637,15 +635,16 @@ document.addEventListener('contextmenu', (e) => {
 
 
 /* ==========================================
-   SERIES DETAILS MODAL - REUSABLE JS
+   SERIES DETAILS MODAL
    ========================================== */
 
-// Get modal elements
 const sdModalOverlay = document.getElementById('sd-modal-overlay');
-const sdModalCard = document.querySelector('.sd-modal-card');
+const navSearchInput = document.getElementById('nav-search-input');
+const navSearchResults = document.getElementById('nav-search-results');
+const navDockElement = document.getElementById('nav-main-dock');
+const navFabElement = document.getElementById('nav-fab-trigger');
 
 /**
- * Opens the series details modal with provided data
  * @param {Object} seriesData - Series information object
  * @param {string} seriesData.name - Series title
  * @param {string} seriesData.poster - Poster image URL
@@ -659,27 +658,23 @@ const sdModalCard = document.querySelector('.sd-modal-card');
  * @param {string} seriesData.spotifyLink - Spotify playlist/album URL
  * @param {string} seriesData.laughLink - Comedy/laugh related URL
  */
+
 function sdOpenModal(seriesData) {
-    // Validate required fields
     if (!seriesData || typeof seriesData !== 'object') {
         console.error('Invalid series data provided to sdOpenModal');
         return;
     }
 
-    // Populate poster
     const posterImg = document.getElementById('sd-poster-img');
     posterImg.src = seriesData.poster || '';
     posterImg.onerror = () => {
         posterImg.src = 'https://via.placeholder.com/400x300?text=No+Image';
     };
 
-    // Populate title
     document.getElementById('sd-title').textContent = seriesData.name || 'Unknown Series';
 
-    // Populate hook
     document.getElementById('sd-hook').textContent = seriesData.hook || 'No hook available.';
 
-    // Populate info items
     document.getElementById('sd-episodes').textContent = seriesData.episodes || '-';
     document.getElementById('sd-seasons').textContent = seriesData.seasons || '-';
     document.getElementById('sd-rating').textContent = seriesData.rating || '-';
@@ -687,15 +682,12 @@ function sdOpenModal(seriesData) {
     document.getElementById('sd-mood').textContent = seriesData.mood || '-';
     document.getElementById('sd-genre').textContent = seriesData.genre || '-';
 
-    // Populate storyline
     document.getElementById('sd-storyline').textContent = seriesData.storyline || 'No description available.';
 
-    // Setup embedded trailer
     const trailerContainer = document.getElementById('sd-trailer-container');
     const trailerEmbed = document.getElementById('sd-trailer-embed');
     if (seriesData.trailerLink) {
         let embedUrl = seriesData.trailerLink;
-        // Convert youtube.com URLs to embed format
         if (embedUrl.includes('youtube.com/watch?v=')) {
             const videoId = embedUrl.split('v=')[1];
             embedUrl = `https://www.youtube.com/embed/${videoId}`;
@@ -709,7 +701,6 @@ function sdOpenModal(seriesData) {
         trailerContainer.style.display = 'none';
     }
 
-    // Setup embedded Spotify
     const spotifyContainer = document.getElementById('sd-spotify-container');
     const spotifyEmbed = document.getElementById('sd-spotify-embed');
     if (seriesData.spotifyLink) {
@@ -719,16 +710,35 @@ function sdOpenModal(seriesData) {
         spotifyContainer.style.display = 'none';
     }
 
-    // Setup action buttons
     setupActionButton('sd-watch-link', seriesData.watchLink, 'Watch');
     setupActionButton('sd-laugh-link', seriesData.laughLink, 'Laugh');
     
-    // Setup Return button - default to 'return' (can be changed to 'refresh', 'both', or 'none')
     setupReturnButton('return');
 
-    // Show modal
     sdModalOverlay.classList.add('sd-show');
     document.body.style.overflow = 'hidden';
+    if (navDockElement) navDockElement.style.pointerEvents = 'none';
+    if (navFabElement) navFabElement.style.pointerEvents = 'none';
+}
+
+/**
+ * Show external link warning modal
+ * @param {string} targetUrl - The URL to redirect to when confirmed
+ */
+function sdShowExternalLinkWarning(targetUrl) {
+    const warningOverlay = document.getElementById('nav-details-modal');
+    const confirmLink = warningOverlay.querySelector('.nav-dcd-confirm');
+    
+    confirmLink.href = targetUrl;
+    confirmLink.target = '_blank';
+    
+    warningOverlay.classList.add('nav-dcd-show');
+}
+
+
+function sdCloseExternalLinkWarning() {
+    const warningOverlay = document.getElementById('nav-details-modal');
+    warningOverlay.classList.remove('nav-dcd-show');
 }
 
 /**
@@ -751,11 +761,9 @@ function setupActionButton(elementId, action, actionType) {
     btn.style.pointerEvents = 'auto';
     btn.title = actionType;
 
-    // Remove existing event listeners by cloning
     const newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
 
-    // Add click handler
     const updatedBtn = document.getElementById(elementId);
     updatedBtn.onclick = (e) => {
         e.preventDefault();
@@ -763,11 +771,9 @@ function setupActionButton(elementId, action, actionType) {
         if (typeof action === 'function') {
             action();
         } else if (typeof action === 'string' && action.length > 0) {
-            // Check if it's a URL or external action
             if (action.startsWith('http') || action.startsWith('spotify:') || action.startsWith('youtube.com')) {
-                window.open(action, '_blank');
+                sdShowExternalLinkWarning(action);
             } else {
-                // Could be a custom action identifier
                 console.log(`Action: ${actionType} -`, action);
             }
         }
@@ -782,19 +788,14 @@ function setupActionButton(elementId, action, actionType) {
 function sdReturnToSearch(event) {
     if (event) event.preventDefault();
     
-    // Close modal
     sdCloseModal();
     
-    // Reopen search modal with previous state
     const currentSearchInput = document.getElementById('nav-search-input');
     if (currentSearchInput && currentSearchInput.value.trim()) {
-        // Restore search modal with the same search query
         document.getElementById('nav-search-modal').classList.add('nav-search-show');
         currentSearchInput.focus();
-        // Trigger search again
         currentSearchInput.dispatchEvent(new Event('input'));
     } else {
-        // If no search input, go back to category selection
         document.getElementById('nav-search-choice-modal').classList.add('nav-search-choice-show');
     }
 }
@@ -836,7 +837,13 @@ function sdCloseModal() {
     sdModalOverlay.classList.remove('sd-show');
     document.body.style.overflow = 'auto';
     
-    // Clear all modal content to prevent stale data
+    if (navDockElement) {
+        navDockElement.style.pointerEvents = 'auto';
+    }
+    if (navFabElement) {
+        navFabElement.style.pointerEvents = 'auto';
+    }
+    
     document.getElementById('sd-title').textContent = 'Series Title';
     document.getElementById('sd-hook').textContent = 'No hook available.';
     document.getElementById('sd-episodes').textContent = '-';
@@ -848,13 +855,11 @@ function sdCloseModal() {
     document.getElementById('sd-storyline').textContent = 'No description available.';
     document.getElementById('sd-poster-img').src = '';
     
-    // Clear embeds
     document.getElementById('sd-trailer-embed').src = '';
     document.getElementById('sd-spotify-embed').src = '';
     document.getElementById('sd-trailer-container').style.display = 'none';
     document.getElementById('sd-spotify-container').style.display = 'none';
     
-    // Reset buttons
     const watchBtn = document.getElementById('sd-watch-link');
     const laughBtn = document.getElementById('sd-laugh-link');
     const returnBtn = document.getElementById('sd-return-link');
