@@ -953,9 +953,9 @@ body { top: 0px !important; }
 
 @media (max-width: 900px) {
   .sd-modal-card {
-    width: 96% !important;
+    width: 91% !important;
     max-width: 820px !important;
-    height: 92vh !important;
+    height: 87vh !important;
     max-height: 94vh !important;
     border-radius: 10px !important;
     overflow: hidden;
