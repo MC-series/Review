@@ -1,5 +1,4 @@
-const animes = [
-  { 
+window.animes = [  { 
     name: "Spy x Family", 
     poster: "https://m.media-amazon.com/images/I/81DrxABCeNL._AC_UF894,1000_QL80_.jpg", 
     alt: "Spy x Family Poster",
@@ -288,7 +287,7 @@ const animes = [
     watch: "https://aniwatchtv.to/watch/the-water-magician-19770?ep=141570",
     trailer: "https://www.youtube.com/embed/wQwk6ztpoXM?si=g-7JW95-S5KqYK1Q",
     laugh: "https://www.youtube.com/shorts/DZyIRawK-c4",
-    spotify: "https://open.spotify.com/embed/track/4qmHgh7ZDoLUbzFTvz6Ho3?utm_source=generator",
+    spotify: "https://open.spotify.com/embed/playlist/5g7suE3AnQ7XKnpZwuIDJY?utm_source=generator",
     keywords: "Water, magic, relaxing, slice-of-life, fantasy, village, nature, calm, adventure, elements, spells, liquid, hydro, farming, community, everyday-life, magical-world, atmosphere, gentle, peaceful, magic-user, growth, simple-living, exploration, creativity, environment, friendship, water-bending, artisan, cozy, cultivation, irrigation, purity, healing, stream, ocean, lake, meditation, tranquility, garden, flowers, tea, reflection, animals, fish, rain, mist, clouds, seasons, harvest, blue, clear, and ripples.",
     keyGenre: "Fantasy, Slice of Life, Seinen, Relaxing, Iyashikei, Atmospheric, Nature, Peaceful, Magic System, Creative, Simple Life, Community, Farming, Gentle, Life Lessons, Meditation, Rural",
     home: false, trending: false, best: false, gold: false, silver: false, bronze: false
@@ -800,5 +799,3 @@ const animes = [
     home: false, trending: false, best: false, gold: false, silver: false, bronze: false
   }
 ];
-
-window.animes = animes;
